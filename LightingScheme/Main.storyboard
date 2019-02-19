@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" customColorSpace="sRGB" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                    </view>
+                    <connections>
+                        <outlet property="MainView" destination="8bC-Xf-vdC" id="name-outlet-8bC-Xf-vdC"/>
+                        <segue id="1742" destination="217" kind="show" identifier="ShowGallery"/>
+                        <segue id="22170" destination="22010" kind="show" identifier="ShowAbout"/>
+                        <segue id="34909" destination="34812" kind="show" identifier="ShowEquipment"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-410" y="8"/>
+        </scene>
+        <scene sceneID="216">
+            <objects>
+                <viewController id="217" sceneMemberID="viewController" customClass="GalleryController" storyboardIdentifier="GalleryController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="214"/>
+                        <viewControllerLayoutGuide type="bottom" id="215"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="218">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="221" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="20" width="667" height="355"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="223">
+                                    <size key="itemSize" width="220" height="250"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="222" reuseIdentifier="ImageCellID">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <connections>
+                                            <segue id="8122" destination="1947" kind="show" identifier="ShowImage"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="224" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="10" y="35" width="51" height="37"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.94509803921568625" green="0.76470588235294112" blue="0.058823529411764705" alpha="1"/>
+                                <state key="normal" image="baseline_menu_black_36pt_2x.png"/>
+                                <connections>
+                                    <segue id="16204" destination="BYZ-38-t0r" kind="show"/>
+                                </connections>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="1"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="26010" firstItem="221" firstAttribute="bottom" secondItem="218" secondAttribute="bottom"/>
+                            <constraint id="26288" firstAttribute="leadingMargin" secondItem="221" secondAttribute="leading" constant="20"/>
+                            <constraint id="26566" firstItem="221" firstAttribute="trailing" secondItem="218" secondAttribute="trailingMargin" constant="20"/>
+                            <constraint id="26843" firstItem="221" firstAttribute="top" secondItem="214" secondAttribute="bottom"/>
+                            <constraint id="27684" firstItem="224" firstAttribute="trailing" secondItem="221" secondAttribute="leading" constant="61"/>
+                            <constraint id="27685" firstAttribute="leadingMargin" secondItem="224" secondAttribute="leading" constant="10"/>
+                            <constraint id="27686" firstItem="224" firstAttribute="top" secondItem="221" secondAttribute="top" constant="15"/>
+                            <constraint id="27687" firstItem="224" firstAttribute="bottom" secondItem="221" secondAttribute="top" constant="52"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Gallery" destination="221" id="name-outlet-221"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="219" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="445" y="-33"/>
+        </scene>
+        <scene sceneID="1946">
+            <objects>
+                <viewController id="1947" sceneMemberID="viewController" customClass="ImageController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1944"/>
+                        <viewControllerLayoutGuide type="bottom" id="1945"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1948">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                    </view>
+                    <connections>
+                        <outlet property="GalleryViewItem" destination="1948" id="name-outlet-1948"/>
+                        <segue id="16166" destination="BYZ-38-t0r" kind="show" identifier="ShowMainMenu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1949" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="422" y="439"/>
+        </scene>
+        <scene sceneID="22009">
+            <objects>
+                <viewController id="22010" sceneMemberID="viewController" customClass="AboutViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="22007"/>
+                        <viewControllerLayoutGuide type="bottom" id="22008"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="22011">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="AboutView" destination="22011" id="name-outlet-22011"/>
+                        <segue id="38412" destination="BYZ-38-t0r" kind="show" identifier="ShowMenuAbout"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22012" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-410" y="545"/>
+        </scene>
+        <scene sceneID="34811">
+            <objects>
+                <viewController id="34812" sceneMemberID="viewController" customClass="EquipmentController" storyboardIdentifier="EquipmentController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="34827"/>
+                        <viewControllerLayoutGuide type="bottom" id="34832"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="34815">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="34814" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="20" width="667" height="355"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="34819">
+                                    <size key="itemSize" width="220" height="250"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="34816" reuseIdentifier="EquipmentCellID">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="34820" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="10" y="35" width="51" height="37"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.94509803921568625" green="0.76470588235294112" blue="0.058823529411764705" alpha="1"/>
+                                <state key="normal" image="baseline_menu_black_36pt_2x.png"/>
+                                <connections>
+                                    <segue id="35407" destination="BYZ-38-t0r" kind="show"/>
+                                </connections>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="1"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="34823" firstItem="34814" firstAttribute="bottom" secondItem="34815" secondAttribute="bottom"/>
+                            <constraint id="34824" firstAttribute="leadingMargin" secondItem="34814" secondAttribute="leading" constant="20"/>
+                            <constraint id="34825" firstItem="34814" firstAttribute="trailing" secondItem="34815" secondAttribute="trailingMargin" constant="20"/>
+                            <constraint id="34826" firstItem="34814" firstAttribute="top" secondItem="34827" secondAttribute="bottom"/>
+                            <constraint id="34828" firstItem="34820" firstAttribute="trailing" secondItem="34814" secondAttribute="leading" constant="61"/>
+                            <constraint id="34829" firstAttribute="leadingMargin" secondItem="34820" secondAttribute="leading" constant="10"/>
+                            <constraint id="34830" firstItem="34820" firstAttribute="top" secondItem="34814" secondAttribute="top" constant="15"/>
+                            <constraint id="34831" firstItem="34820" firstAttribute="bottom" secondItem="34814" secondAttribute="top" constant="52"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="EquipmentGallery" destination="34814" id="name-outlet-34814"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="34833" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373" y="320"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="baseline_menu_black_36pt_2x.png" width="72" height="72"/>
+    </resources>
+</document>
